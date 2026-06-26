@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "CFP Tracker MD Reload",
+  "description": "When cfp_tracker.md is saved, triggers a browser reload of the CFP Tracker dev server so the UI immediately reflects the updated data",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "**/cfp_tracker.md"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "The file cfp_tracker.md has been updated. Remind the user that the CFP Tracker UI will automatically pick up the changes within 30 seconds (via polling), or they can click the Refresh button in the UI for immediate update. No action needed."
+  }
+}
